@@ -88,7 +88,7 @@ async def next_page(bot, query):
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 10
+        off_set = offset - 6
     if n_offset == 0:
         btn.append(
             
