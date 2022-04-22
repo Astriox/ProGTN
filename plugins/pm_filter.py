@@ -97,6 +97,13 @@ async def next_page(bot, query):
                 
              InlineKeyboardButton(f"ᴍᴏʀᴇ ᴩᴀɢᴇꜱ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ😢",callback_data="pages")]
         )
+        btn.append(
+            
+            
+            [
+                
+             InlineKeyboardButton(f"ᴍᴏʀᴇ ᴩᴀɢᴇꜱ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ😢",callback_data="pages")]
+        )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton("ᴩᴀɢᴇ", callback_data=f"next_{req}_{key}_{off_set}"),
