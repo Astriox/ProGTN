@@ -94,7 +94,7 @@ async def next_page(bot, query):
             
             
             [
-                InlineKeyboardButton("⏪ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                
              InlineKeyboardButton(f"ᴍᴏʀᴇ ᴩᴀɢᴇꜱ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ😢",callback_data="pages")]
         )
     elif off_set is None:
@@ -105,9 +105,9 @@ async def next_page(bot, query):
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🎪 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"{round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -672,7 +672,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🎪 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
