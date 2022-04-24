@@ -1,8 +1,8 @@
 class script(object):
-    START_TXT = """𝐇𝐞𝐲 {}\n\n⎆𝐌𝐲 𝐍𝐚𝐦𝐞 𝐢𝐬 𝐁𝐞𝐥𝐥𝐚\n\n⎆𝐈 𝐀𝐦 𝐚 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐟𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭.\n\n⎆𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐖𝐢𝐭𝐡 <a href='https://t.me/Cinemahub182'>𝐂𝐈𝐍𝐄𝐌𝐀𝐇𝐔𝐁...</a>\n\n➪ 𝐌𝐚𝐢𝐧𝐭𝐚𝐢𝐧𝐞𝐝 𝐁𝐲 : <a href='https://t.me/Kaithiofdarkness369'> 𝑆𝑜𝑜𝑟𝑦𝑎 𝐷𝑢𝑡ℎ </a>\n➪ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝  𝐁𝐲 : <a href='https://t.me/Anandhukuttu'>  𝐴𝑛𝑎𝑛𝑑ℎ𝑢 </a>"""
+    START_TXT = """𝐇𝐞𝐲 {}\n\n⎆𝐌𝐲 𝐍𝐚𝐦𝐞 𝐢𝐬 𝐏𝐡𝐨𝐞𝐧𝐢𝐱\n\n⎆𝐈 𝐀𝐦 𝐚 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐟𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭.\n\n⎆𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐖𝐢𝐭𝐡 <a href='https://t.me/Cinemahub182'>𝐂𝐈𝐍𝐄𝐌𝐀𝐇𝐔𝐁...</a>\n\n➪ 𝐌𝐚𝐢𝐧𝐭𝐚𝐢𝐧𝐞𝐝 𝐁𝐲 : <a href='https://t.me/Kaithiofdarkness369'> 𝑆𝑜𝑜𝑟𝑦𝑎 𝐷𝑢𝑡ℎ </a>\n➪ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝  𝐁𝐲 : <a href='https://t.me/Anandhukuttu'>  𝐴𝑛𝑎𝑛𝑑ℎ𝑢 </a>"""
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
-    ABOUT_TXT = """<b>🥱 My Name : 𝐁𝐞𝐥𝐥𝐚💋
+    ABOUT_TXT = """<b>🥱 My Name : 𝐏𝐡𝐨𝐞𝐧𝐢𝐱
 🕵‍♂ Developer : <a href='https://t.me/Anandhukuttu'>★ 𝓐𝓷𝓪𝓷𝓭𝓱𝓾 ★</a>
 📚 Library : 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
 🖥 Language : 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
