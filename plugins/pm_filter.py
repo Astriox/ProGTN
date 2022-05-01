@@ -82,13 +82,18 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
+        ]
+    )
 
-    if 0 < offset <= 10:
+    if 0 < offset <= 6:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 10
+        off_set = offset - 6
     if n_offset == 0:
         btn.append(
             
@@ -143,13 +148,12 @@ async def advantage_spoll_choker(bot, query):
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
-            await auto_filter(bot, query, k)
+            await auto_filter(bot, query, k, h)
         else:
             k = await query.message.edit("<b><i>Movie Not available Reason\n\n1)O.T.T Or DVD Not Released\n\n2)Type Name With Year\n\n3)Movie Is Not Available in the database contact Admin</i></b>")
             await asyncio.sleep(20)
             await k.delete()
-
-
+ 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
@@ -616,7 +620,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    elif query.data == 'reqst1':
+        await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want And Start The Bot ⬇️", True)
+    try: await query.answer('Piracy Is Crime') 
+    except: pass
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -664,6 +671,11 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
