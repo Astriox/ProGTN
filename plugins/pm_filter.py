@@ -580,7 +580,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-
+    await query.answer('Piracy Is Crime')
+    
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
@@ -627,15 +628,39 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
     btn.insert(0, 
-        [
-            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
+        settings = await get_settings(msg.message.chat.id)
+        message = msg.message.reply_to_message  # msg will be callback query
+        search, files, offset, total_results = spoll
+    pre = 'filep' if settings['file_secure'] else 'file'
+    if settings["button"]:
+        btn = [
+            [
+                InlineKeyboardButton(
+                    text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}'
+                ),
+            ]
+            for file in files
         ]
-    )
-    btn.insert(1,
+    else:
+        btn = [
+            [
+                InlineKeyboardButton(
+                    text=f"{file.file_name}",
+                    callback_data=f'{pre}#{file.file_id}',
+                ),
+                InlineKeyboardButton(
+                    text=f"{get_size(file.file_size)}",
+                    callback_data=f'{pre}#{file.file_id}',
+                ),
+            ]
+            for file in files
+        ]
+
+    btn.insert(0, 
         [
-            InlineKeyboardButton(f'📟 Files: {total_results}', 'dupe'),
-            InlineKeyboardButton(f'🎁 Tips', 'tips'),
-            InlineKeyboardButton(f'📮 Info', 'info')
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
     )
 
@@ -644,13 +669,11 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [ InlineKeyboardButton(text=f"ᴩᴀɢᴇ", callback_data="pages"),
-                InlineKeyboardButton(text=f"1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"),InlineKeyboardButton(text=f"1 - {round(int(total_results)/10)}", callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
